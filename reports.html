@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Report - Inventory Manager Pro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <i class="fas fa-boxes"></i>
+          <span>Inventory Pro</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-down"></i>
+            <span>Stock In</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-up"></i>
+            <span>Stock Out</span>
+          </li>
+          <li class="menu-item active">
+            <i class="fas fa-chart-line"></i>
+            <span>Sales Report</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>Suppliers</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">Sales Reports & Analytics</h1>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search sales records..." />
+          </div>
+          <div class="user-profile">
+            <img
+              src="https://ui-avatars.com/api/?name=Admin+User&background=random"
+              alt="User"
+            />
+            <span>Admin User</span>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters">
+          <div class="filter-header">
+            <h3 class="filter-title">Report Filters</h3>
+            <button class="action-btn btn-primary">
+              <i class="fas fa-sync-alt"></i> Apply Filters
+            </button>
+          </div>
+          <div class="filter-options">
+            <div class="filter-group">
+              <label for="date-range">Date Range</label>
+              <select id="date-range" class="filter-select">
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="this-week" selected>This Week</option>
+                <option value="last-week">Last Week</option>
+                <option value="this-month">This Month</option>
+                <option value="last-month">Last Month</option>
+                <option value="custom">Custom Range</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="category">Category</label>
+              <select id="category" class="filter-select">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="sports">Sports</option>
+                <option value="home">Home Appliances</option>
+                <option value="fashion">Fashion</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="product">Product</label>
+              <select id="product" class="filter-select">
+                <option value="">All Products</option>
+                <option value="product1">Wireless Headphones</option>
+                <option value="product2">Smart Watch</option>
+                <option value="product3">Running Shoes</option>
+                <option value="product4">Coffee Maker</option>
+                <option value="product5">Desk Lamp</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="customer">Customer</label>
+              <select id="customer" class="filter-select">
+                <option value="">All Customers</option>
+                <option value="customer1">Retail Customers</option>
+                <option value="customer2">Wholesale Customers</option>
+                <option value="customer3">Online Customers</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-cards">
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #e6f0ff; color: #4361ee">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="stat-info">
+              <h4>$24,890</h4>
+              <p>Total Revenue</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #e6f7ee; color: #00a65a">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="stat-info">
+              <h4>328</h4>
+              <p>Total Orders</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #fff4e6; color: #f8961e">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="stat-info">
+              <h4>895</h4>
+              <p>Items Sold</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #ffe6e6; color: #f72585">
+              <i class="fas fa-undo"></i>
+            </div>
+            <div class="stat-info">
+              <h4>28</h4>
+              <p>Returns</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Sales Performance</h3>
+              <div class="chart-actions">
+                <button class="action-btn btn-primary">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <h3 class="chart-title">Top Categories</h3>
+              <div class="chart-actions">
+                <button class="action-btn btn-primary">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="categoryChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sales Table -->
+        <div class="table-container">
+          <div class="table-header">
+            <h2 class="table-title">Recent Sales Transactions</h2>
+            <button class="action-btn btn-export">
+              <i class="fas fa-file-export"></i> Export Report
+            </button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-7892</td>
+                <td>2023-07-15</td>
+                <td>John Smith</td>
+                <td>Wireless Headphones</td>
+                <td>2</td>
+                <td>$179.98</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7891</td>
+                <td>2023-07-15</td>
+                <td>Sarah Johnson</td>
+                <td>Smart Watch</td>
+                <td>1</td>
+                <td>$199.99</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7890</td>
+                <td>2023-07-14</td>
+                <td>Mike Williams</td>
+                <td>Coffee Maker</td>
+                <td>1</td>
+                <td>$49.99</td>
+                <td><span class="status refunded">Refunded</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7889</td>
+                <td>2023-07-14</td>
+                <td>Emily Davis</td>
+                <td>Running Shoes</td>
+                <td>1</td>
+                <td>$79.99</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7888</td>
+                <td>2023-07-13</td>
+                <td>David Brown</td>
+                <td>Desk Lamp</td>
+                <td>3</td>
+                <td>$89.97</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7887</td>
+                <td>2023-07-13</td>
+                <td>Jessica Miller</td>
+                <td>Wireless Headphones</td>
+                <td>1</td>
+                <td>$89.99</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>#ORD-7886</td>
+                <td>2023-07-12</td>
+                <td>Robert Wilson</td>
+                <td>Smart Watch</td>
+                <td>2</td>
+                <td>$399.98</td>
+                <td><span class="status completed">Completed</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Set up sales chart
+      const salesCtx = document.getElementById("salesChart").getContext("2d");
+      const salesChart = new Chart(salesCtx, {
+        type: "line",
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              label: "Sales ($)",
+              data: [3200, 4500, 3800, 5200, 6100, 7500, 6900],
+              borderColor: "#4361ee",
+              backgroundColor: "rgba(67, 97, 238, 0.1)",
+              tension: 0.4,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                drawBorder: false,
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+            },
+          },
+        },
+      });
+
+      // Set up category chart
+      const categoryCtx = document
+        .getElementById("categoryChart")
+        .getContext("2d");
+      const categoryChart = new Chart(categoryCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["Electronics", "Sports", "Home Appliances", "Fashion"],
+          datasets: [
+            {
+              data: [45, 25, 20, 10],
+              backgroundColor: ["#4361ee", "#4cc9f0", "#f8961e", "#f72585"],
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+          },
+        },
+      });
+
+      // Menu item activation
+      const menuItems = document.querySelectorAll(".menu-item");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          menuItems.forEach((i) => i.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+
+      // Set default date range to this week
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("date-range").value = "this-week";
+      });
+    </script>
+  </body>
+</html>

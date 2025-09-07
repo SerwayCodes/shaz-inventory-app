@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Inventory Manager Pro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+ <link rel="stylesheet" href="/assets/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <i class="fas fa-boxes"></i>
+          <span>Inventory Pro</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="menu-item active">
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-down"></i>
+            <span>Stock In</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-up"></i>
+            <span>Stock Out</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Sales Report</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-users"></i>
+            <span>Suppliers</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">Products Management</h1>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search products..." />
+          </div>
+          <div class="user-profile">
+            <img
+              src="https://ui-avatars.com/api/?name=Admin+User&background=random"
+              alt="User"
+            />
+            <span>Admin User</span>
+          </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters">
+          <div class="filter-header">
+            <h3 class="filter-title">Filter Products</h3>
+            <button class="action-btn" style="background: var(--light)">
+              <i class="fas fa-sync-alt"></i> Reset Filters
+            </button>
+          </div>
+          <div class="filter-options">
+            <div class="filter-group">
+              <label for="category">Category</label>
+              <select id="category" class="filter-select">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="sports">Sports</option>
+                <option value="home">Home Appliances</option>
+                <option value="fashion">Fashion</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="status">Stock Status</label>
+              <select id="status" class="filter-select">
+                <option value="">All Status</option>
+                <option value="in-stock">In Stock</option>
+                <option value="low-stock">Low Stock</option>
+                <option value="out-of-stock">Out of Stock</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="supplier">Supplier</label>
+              <select id="supplier" class="filter-select">
+                <option value="">All Suppliers</option>
+                <option value="supplier1">Supplier A</option>
+                <option value="supplier2">Supplier B</option>
+                <option value="supplier3">Supplier C</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="sort">Sort By</label>
+              <select id="sort" class="filter-select">
+                <option value="name">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="price">Price (Low to High)</option>
+                <option value="price-desc">Price (High to Low)</option>
+                <option value="stock">Stock (Low to High)</option>
+                <option value="stock-desc">Stock (High to Low)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Header -->
+        <div class="products-header">
+          <h2>All Products (24)</h2>
+          <div class="view-options">
+            <button class="view-btn active" id="gridViewBtn">
+              <i class="fas fa-th"></i> Grid
+            </button>
+            <button class="view-btn" id="tableViewBtn">
+              <i class="fas fa-list"></i> List
+            </button>
+            <button class="action-btn btn-primary">
+              <i class="fas fa-plus"></i> Add Product
+            </button>
+          </div>
+        </div>
+
+        <!-- Products Grid View -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Product Card 1 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Wireless Headphones"
+              />
+              <span class="product-status status-in-stock">In Stock</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Wireless Headphones</h3>
+              <p class="product-category">Electronics</p>
+              <div class="product-details">
+                <span class="product-price">$89.99</span>
+                <span class="product-stock">45 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0Y2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Smart Watch"
+              />
+              <span class="product-status status-low-stock">Low Stock</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Smart Watch</h3>
+              <p class="product-category">Electronics</p>
+              <div class="product-details">
+                <span class="product-price">$199.99</span>
+                <span class="product-stock">12 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Running Shoes"
+              />
+              <span class="product-status status-out-of-stock"
+                >Out of Stock</span
+              >
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Running Shoes</h3>
+              <p class="product-category">Sports</p>
+              <div class="product-details">
+                <span class="product-price">$79.99</span>
+                <span class="product-stock">0 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwbWFrZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                alt="Coffee Maker"
+              />
+              <span class="product-status status-in-stock">In Stock</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Coffee Maker</h3>
+              <p class="product-category">Home Appliances</p>
+              <div class="product-details">
+                <span class="product-price">$49.99</span>
+                <span class="product-stock">28 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRlc2slMjBsYW1wfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                alt="Desk Lamp"
+              />
+              <span class="product-status status-low-stock">Low Stock</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Desk Lamp</h3>
+              <p class="product-category">Home Decor</p>
+              <div class="product-details">
+                <span class="product-price">$29.99</span>
+                <span class="product-stock">7 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 6 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                alt="Cotton T-Shirt"
+              />
+              <span class="product-status status-in-stock">In Stock</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cotton T-Shirt</h3>
+              <p class="product-category">Fashion</p>
+              <div class="product-details">
+                <span class="product-price">$19.99</span>
+                <span class="product-stock">82 in stock</span>
+              </div>
+              <div class="product-actions">
+                <button class="action-btn btn-view">
+                  <i class="fas fa-eye"></i>
+                </button>
+                <button class="action-btn btn-edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="action-btn btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Table View -->
+        <div class="products-table" id="productsTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <img
+                      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=50&q=60"
+                      alt="Wireless Headphones"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        border-radius: 5px;
+                        margin-right: 10px;
+                      "
+                    />
+                    <div>
+                      <div style="font-weight: 600">Wireless Headphones</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        PRD-001
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Electronics</td>
+                <td>$89.99</td>
+                <td>45</td>
+                <td>
+                  <span
+                    class="status-in-stock"
+                    style="padding: 5px 10px; border-radius: 20px"
+                    >In Stock</span
+                  >
+                </td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <img
+                      src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2F0Y2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=50&q=60"
+                      alt="Smart Watch"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        border-radius: 5px;
+                        margin-right: 10px;
+                      "
+                    />
+                    <div>
+                      <div style="font-weight: 600">Smart Watch</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        PRD-002
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Electronics</td>
+                <td>$199.99</td>
+                <td>12</td>
+                <td>
+                  <span
+                    class="status-low-stock"
+                    style="padding: 5px 10px; border-radius: 20px"
+                    >Low Stock</span
+                  >
+                </td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <img
+                      src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=50&q=60"
+                      alt="Running Shoes"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                        border-radius: 5px;
+                        margin-right: 10px;
+                      "
+                    />
+                    <div>
+                      <div style="font-weight: 600">Running Shoes</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        PRD-003
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Sports</td>
+                <td>$79.99</td>
+                <td>0</td>
+                <td>
+                  <span
+                    class="status-out-of-stock"
+                    style="padding: 5px 10px; border-radius: 20px"
+                    >Out of Stock</span
+                  >
+                </td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="pagination-btn active">1</button>
+          <button class="pagination-btn">2</button>
+          <button class="pagination-btn">3</button>
+          <button class="pagination-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Toggle between grid and table view
+      const gridViewBtn = document.getElementById("gridViewBtn");
+      const tableViewBtn = document.getElementById("tableViewBtn");
+      const productsGrid = document.getElementById("productsGrid");
+      const productsTable = document.getElementById("productsTable");
+
+      gridViewBtn.addEventListener("click", () => {
+        productsGrid.style.display = "grid";
+        productsTable.style.display = "none";
+        gridViewBtn.classList.add("active");
+        tableViewBtn.classList.remove("active");
+      });
+
+      tableViewBtn.addEventListener("click", () => {
+        productsGrid.style.display = "none";
+        productsTable.style.display = "block";
+        tableViewBtn.classList.add("active");
+        gridViewBtn.classList.remove("active");
+      });
+
+      // Menu item activation
+      const menuItems = document.querySelectorAll(".menu-item");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          menuItems.forEach((i) => i.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

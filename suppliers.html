@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suppliers - Inventory Manager Pro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <i class="fas fa-boxes"></i>
+          <span>Inventory Pro</span>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-down"></i>
+            <span>Stock In</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-arrow-up"></i>
+            <span>Stock Out</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Sales Report</span>
+          </li>
+          <li class="menu-item active">
+            <i class="fas fa-users"></i>
+            <span>Suppliers</span>
+          </li>
+          <li class="menu-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">Suppliers Management</h1>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search suppliers..." />
+          </div>
+          <div class="user-profile">
+            <img
+              src="https://ui-avatars.com/api/?name=Admin+User&background=random"
+              alt="User"
+            />
+            <span>Admin User</span>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab active">All Suppliers</div>
+          <div class="tab">Primary Suppliers</div>
+          <div class="tab">Pending Orders</div>
+          <div class="tab">Performance</div>
+        </div>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-cards">
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #e6f0ff; color: #4361ee">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h4>24</h4>
+              <p>Total Suppliers</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #e6f7ee; color: #00a65a">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="stat-info">
+              <h4>12</h4>
+              <p>Active Orders</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #fff4e6; color: #f8961e">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-info">
+              <h4>5</h4>
+              <p>Pending Deliveries</p>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon" style="background: #ffe6e6; color: #f72585">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h4>3</h4>
+              <p>Issues Reported</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Header -->
+        <div class="action-header">
+          <h2 class="action-title">Suppliers Directory</h2>
+          <button class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add New Supplier
+          </button>
+        </div>
+
+        <!-- Suppliers Grid -->
+        <div class="suppliers-grid">
+          <!-- Supplier Card 1 -->
+          <div class="supplier-card">
+            <div class="supplier-header">
+              <div class="supplier-avatar">ET</div>
+              <div class="supplier-info">
+                <h3>ElectroTech Inc.</h3>
+                <p>Primary Electronics Supplier</p>
+              </div>
+            </div>
+            <div class="supplier-details">
+              <div class="detail-row">
+                <span class="detail-label">Contact:</span>
+                <span class="detail-value">John Smith</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value">john@electrotech.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">(555) 123-4567</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Products:</span>
+                <span class="detail-value">28</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="status active">Active</span>
+              </div>
+            </div>
+            <div class="supplier-actions">
+              <button class="action-btn btn-view">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <button class="action-btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+
+          <!-- Supplier Card 2 -->
+          <div class="supplier-card">
+            <div class="supplier-header">
+              <div class="supplier-avatar">SG</div>
+              <div class="supplier-info">
+                <h3>Sports Gear Co.</h3>
+                <p>Sporting Goods Supplier</p>
+              </div>
+            </div>
+            <div class="supplier-details">
+              <div class="detail-row">
+                <span class="detail-label">Contact:</span>
+                <span class="detail-value">Sarah Johnson</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value">sarah@sportsgear.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">(555) 987-6543</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Products:</span>
+                <span class="detail-value">15</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="status active">Active</span>
+              </div>
+            </div>
+            <div class="supplier-actions">
+              <button class="action-btn btn-view">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <button class="action-btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+
+          <!-- Supplier Card 3 -->
+          <div class="supplier-card">
+            <div class="supplier-header">
+              <div class="supplier-avatar">HA</div>
+              <div class="supplier-info">
+                <h3>Home Appliances Ltd.</h3>
+                <p>Home Goods Supplier</p>
+              </div>
+            </div>
+            <div class="supplier-details">
+              <div class="detail-row">
+                <span class="detail-label">Contact:</span>
+                <span class="detail-value">Michael Brown</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value">michael@homeappliances.com</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">(555) 456-7890</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Products:</span>
+                <span class="detail-value">22</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="status pending">Pending</span>
+              </div>
+            </div>
+            <div class="supplier-actions">
+              <button class="action-btn btn-view">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <button class="action-btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suppliers Table -->
+        <div class="table-container">
+          <div class="table-header">
+            <h2 class="table-title">All Suppliers</h2>
+            <button class="btn btn-primary">
+              <i class="fas fa-download"></i> Export List
+            </button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Supplier</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Products</th>
+                <th>Last Order</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: #4361ee;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        margin-right: 10px;
+                      "
+                    >
+                      ET
+                    </div>
+                    <div>
+                      <div style="font-weight: 600">ElectroTech Inc.</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        Electronics
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>John Smith</td>
+                <td>john@electrotech.com</td>
+                <td>28</td>
+                <td>2023-07-15</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: #4cc9f0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        margin-right: 10px;
+                      "
+                    >
+                      SG
+                    </div>
+                    <div>
+                      <div style="font-weight: 600">Sports Gear Co.</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        Sporting Goods
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Sarah Johnson</td>
+                <td>sarah@sportsgear.com</td>
+                <td>15</td>
+                <td>2023-07-14</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: #f8961e;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        margin-right: 10px;
+                      "
+                    >
+                      HA
+                    </div>
+                    <div>
+                      <div style="font-weight: 600">Home Appliances Ltd.</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        Home Goods
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Michael Brown</td>
+                <td>michael@homeappliances.com</td>
+                <td>22</td>
+                <td>2023-07-10</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: flex; align-items: center">
+                    <div
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: #f72585;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-weight: bold;
+                        margin-right: 10px;
+                      "
+                    >
+                      FC
+                    </div>
+                    <div>
+                      <div style="font-weight: 600">Fashion Corner</div>
+                      <div style="font-size: 12px; color: var(--gray)">
+                        Clothing
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>Emily Davis</td>
+                <td>emily@fashioncorner.com</td>
+                <td>18</td>
+                <td>2023-07-08</td>
+                <td><span class="status inactive">Inactive</span></td>
+                <td>
+                  <button class="action-btn btn-view">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="action-btn btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="action-btn btn-delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Menu item activation
+      const menuItems = document.querySelectorAll(".menu-item");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          menuItems.forEach((i) => i.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+
+      // Tab functionality
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          tabs.forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Out - Inventory Manager Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-boxes"></i>
+                <span>Inventory Pro</span>
+            </div>
+            <ul class="menu">
+                <li class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="menu-item">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </li>
+                <li class="menu-item">
+                    <i class="fas fa-arrow-down"></i>
+                    <span>Stock In</span>
+                </li>
+                <li class="menu-item active">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Stock Out</span>
+                </li>
+                <li class="menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sales Report</span>
+                </li>
+                <li class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Suppliers</span>
+                </li>
+                <li class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1 class="page-title">Stock Out Management</h1>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search stock out records...">
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="User">
+                    <span>Admin User</span>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active">Sales</div>
+                <div class="tab">Returns</div>
+                <div class="tab">Damaged</div>
+                <div class="tab">Other</div>
+            </div>
+            
+            <!-- Dashboard Stats -->
+            <div class="dashboard-cards">
+                <div class="card stat-card">
+                    <div class="stat-icon" style="background: #ffe6e6; color: #f72585;">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>32</h4>
+                        <p>Stock Out (Today)</p>
+                    </div>
+                </div>
+                
+                <div class="card stat-card">
+                    <div class="stat-icon" style="background: #e6f0ff; color: #4361ee;">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>$3,890</h4>
+                        <p>Today's Sales</p>
+                    </div>
+                </div>
+                
+                <div class="card stat-card">
+                    <div class="stat-icon" style="background: #fff4e6; color: #f8961e;">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>5</h4>
+                        <p>Returns Today</p>
+                    </div>
+                </div>
+                
+                <div class="card stat-card">
+                    <div class="stat-icon" style="background: #e6f7ee; color: #00a65a;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>28</h4>
+                        <p>Transactions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stock Out Form -->
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 class="form-title">Record Stock Out</h2>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-history"></i> Clear Form
+                    </button>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product">Product</label>
+                        <select id="product" class="form-control">
+                            <option value="">Select Product</option>
+                            <option value="product1">Wireless Headphones</option>
+                            <option value="product2">Smart Watch</option>
+                            <option value="product3">Running Shoes</option>
+                            <option value="product4">Coffee Maker</option>
+                            <option value="product5">Desk Lamp</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" class="form-control" placeholder="Enter quantity">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reason">Reason</label>
+                        <select id="reason" class="form-control">
+                            <option value="">Select Reason</option>
+                            <option value="sale">Sale</option>
+                            <option value="return">Return</option>
+                            <option value="damaged">Damaged</option>
+                            <option value="sample">Sample</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="price">Unit Price ($)</label>
+                        <input type="number" id="price" class="form-control" placeholder="0.00" step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discount">Discount (%)</label>
+                        <input type="number" id="discount" class="form-control" placeholder="0" min="0" max="100">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" class="form-control" rows="3" placeholder="Additional notes"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-check"></i> Record Stock Out
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Recent Stock Out Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">Recent Stock Out Transactions</h2>
+                    <button class="btn btn-success">
+                        <i class="fas fa-download"></i> Export Report
+                    </button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Reason</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-07-15</td>
+                            <td>Wireless Headphones</td>
+                            <td>5</td>
+                            <td>Sale</td>
+                            <td>$89.99</td>
+                            <td>$449.95</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>
+                                <button class="action-btn btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-15</td>
+                            <td>Smart Watch</td>
+                            <td>2</td>
+                            <td>Sale</td>
+                            <td>$199.99</td>
+                            <td>$399.98</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>
+                                <button class="action-btn btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-14</td>
+                            <td>Coffee Maker</td>
+                            <td>1</td>
+                            <td>Return</td>
+                            <td>$49.99</td>
+                            <td>-$49.99</td>
+                            <td><span class="status refunded">Refunded</span></td>
+                            <td>
+                                <button class="action-btn btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-14</td>
+                            <td>Running Shoes</td>
+                            <td>1</td>
+                            <td>Damaged</td>
+                            <td>$79.99</td>
+                            <td>$0.00</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>
+                                <button class="action-btn btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2023-07-13</td>
+                            <td>Desk Lamp</td>
+                            <td>3</td>
+                            <td>Sale</td>
+                            <td>$29.99</td>
+                            <td>$89.97</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Set today's date as default for the date field
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1;
+            let dd = today.getDate();
+            
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+            
+            const formattedToday = `${yyyy}-${mm}-${dd}`;
+            document.getElementById('date').value = formattedToday;
+        });
+        
+        // Menu item activation
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Tab functionality
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Calculate total based on quantity and price
+        const quantityInput = document.getElementById('quantity');
+        const priceInput = document.getElementById('price');
+        const discountInput = document.getElementById('discount');
+        
+        function calculateTotal() {
+            const quantity = parseFloat(quantityInput.value) || 0;
+            const price = parseFloat(priceInput.value) || 0;
+            const discount = parseFloat(discountInput.value) || 0;
+            
+            const discountAmount = (price * discount) / 100;
+            const finalPrice = price - discountAmount;
+            const total = quantity * finalPrice;
+            
+            // In a real application, we would display this somewhere
+            console.log('Total:', total);
+        }
+        
+        quantityInput.addEventListener('input', calculateTotal);
+        priceInput.addEventListener('input', calculateTotal);
+        discountInput.addEventListener('input', calculateTotal);
+    </script>
+</body>
+</html>
