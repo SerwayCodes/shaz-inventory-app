@@ -19,33 +19,33 @@
           <span>Inventory Pro</span>
         </div>
         <ul class="menu">
-          <li class="menu-item">
+          <li class="menu-item active">
             <i class="fas fa-home"></i>
-            <span>Dashboard</span>
+            <a href="index.html"><span>Dashboard</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-box"></i>
-            <span>Products</span>
+            <a href="products.html"><span>Products</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-down"></i>
-            <span>Stock In</span>
+            <a href="stockin.html"><span>Stock In</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-up"></i>
-            <span>Stock Out</span>
+            <a href="stockout.html"><span>Stock Out</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-chart-line"></i>
-            <span>Sales Report</span>
+            <a href="reports.html"><span>Sales Report</span></a>
           </li>
-          <li class="menu-item active">
+          <li class="menu-item">
             <i class="fas fa-users"></i>
-            <span>Suppliers</span>
+            <a href="suppliers.html"><span>Suppliers</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-cog"></i>
-            <span>Settings</span>
+            <a href="settings.html"><span>Settings</span></a>
           </li>
         </ul>
       </div>
@@ -456,24 +456,6 @@
       </div>
     </div>
 
-    <script>
-      // Menu item activation
-      const menuItems = document.querySelectorAll(".menu-item");
-      menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          menuItems.forEach((i) => i.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-
-      // Tab functionality
-      const tabs = document.querySelectorAll(".tab");
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-          tabs.forEach((t) => t.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-    </script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

@@ -20,33 +20,33 @@
           <span>Inventory Pro</span>
         </div>
         <ul class="menu">
-          <li class="menu-item">
+          <li class="menu-item active">
             <i class="fas fa-home"></i>
-            <span>Dashboard</span>
+            <a href="index.html"><span>Dashboard</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-box"></i>
-            <span>Products</span>
+            <a href="products.html"><span>Products</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-down"></i>
-            <span>Stock In</span>
+            <a href="stockin.html"><span>Stock In</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-up"></i>
-            <span>Stock Out</span>
+            <a href="stockout.html"><span>Stock Out</span></a>
           </li>
-          <li class="menu-item active">
+          <li class="menu-item">
             <i class="fas fa-chart-line"></i>
-            <span>Sales Report</span>
+            <a href="reports.html"><span>Sales Report</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-users"></i>
-            <span>Suppliers</span>
+            <a href="suppliers.html"><span>Suppliers</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-cog"></i>
-            <span>Settings</span>
+            <a href="settings.html"><span>Settings</span></a>
           </li>
         </ul>
       </div>
@@ -129,7 +129,7 @@
               <i class="fas fa-dollar-sign"></i>
             </div>
             <div class="stat-info">
-              <h4>$24,890</h4>
+              <h4>K24,890</h4>
               <p>Total Revenue</p>
             </div>
           </div>
@@ -225,7 +225,7 @@
                 <td>John Smith</td>
                 <td>Wireless Headphones</td>
                 <td>2</td>
-                <td>$179.98</td>
+                <td>K179.98</td>
                 <td><span class="status completed">Completed</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -239,7 +239,7 @@
                 <td>Sarah Johnson</td>
                 <td>Smart Watch</td>
                 <td>1</td>
-                <td>$199.99</td>
+                <td>K199.99</td>
                 <td><span class="status completed">Completed</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -253,7 +253,7 @@
                 <td>Mike Williams</td>
                 <td>Coffee Maker</td>
                 <td>1</td>
-                <td>$49.99</td>
+                <td>K49.99</td>
                 <td><span class="status refunded">Refunded</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -267,7 +267,7 @@
                 <td>Emily Davis</td>
                 <td>Running Shoes</td>
                 <td>1</td>
-                <td>$79.99</td>
+                <td>K79.99</td>
                 <td><span class="status completed">Completed</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -281,7 +281,7 @@
                 <td>David Brown</td>
                 <td>Desk Lamp</td>
                 <td>3</td>
-                <td>$89.97</td>
+                <td>K89.97</td>
                 <td><span class="status pending">Pending</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -295,7 +295,7 @@
                 <td>Jessica Miller</td>
                 <td>Wireless Headphones</td>
                 <td>1</td>
-                <td>$89.99</td>
+                <td>K89.99</td>
                 <td><span class="status completed">Completed</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -309,7 +309,7 @@
                 <td>Robert Wilson</td>
                 <td>Smart Watch</td>
                 <td>2</td>
-                <td>$399.98</td>
+                <td>K399.98</td>
                 <td><span class="status completed">Completed</span></td>
                 <td>
                   <button class="action-btn btn-view">
@@ -323,88 +323,6 @@
       </div>
     </div>
 
-    <script>
-      // Set up sales chart
-      const salesCtx = document.getElementById("salesChart").getContext("2d");
-      const salesChart = new Chart(salesCtx, {
-        type: "line",
-        data: {
-          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-          datasets: [
-            {
-              label: "Sales ($)",
-              data: [3200, 4500, 3800, 5200, 6100, 7500, 6900],
-              borderColor: "#4361ee",
-              backgroundColor: "rgba(67, 97, 238, 0.1)",
-              tension: 0.4,
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              grid: {
-                drawBorder: false,
-              },
-            },
-            x: {
-              grid: {
-                display: false,
-              },
-            },
-          },
-        },
-      });
-
-      // Set up category chart
-      const categoryCtx = document
-        .getElementById("categoryChart")
-        .getContext("2d");
-      const categoryChart = new Chart(categoryCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["Electronics", "Sports", "Home Appliances", "Fashion"],
-          datasets: [
-            {
-              data: [45, 25, 20, 10],
-              backgroundColor: ["#4361ee", "#4cc9f0", "#f8961e", "#f72585"],
-              borderWidth: 0,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: "bottom",
-            },
-          },
-        },
-      });
-
-      // Menu item activation
-      const menuItems = document.querySelectorAll(".menu-item");
-      menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          menuItems.forEach((i) => i.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-
-      // Set default date range to this week
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("date-range").value = "this-week";
-      });
-    </script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
