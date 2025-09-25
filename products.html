@@ -13,39 +13,40 @@
   <body>
     <div class="container">
       <!-- Sidebar -->
+      <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
           <i class="fas fa-boxes"></i>
           <span>Inventory Pro</span>
         </div>
         <ul class="menu">
-          <li class="menu-item">
-            <i class="fas fa-home"></i>
-            <span>Dashboard</span>
-          </li>
           <li class="menu-item active">
+            <i class="fas fa-home"></i>
+            <a href="index.html"><span>Dashboard</span></a>
+          </li>
+          <li class="menu-item">
             <i class="fas fa-box"></i>
-            <span>Products</span>
+            <a href="products.html"><span>Products</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-down"></i>
-            <span>Stock In</span>
+            <a href="stockin.html"><span>Stock In</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-up"></i>
-            <span>Stock Out</span>
+            <a href="stockout.html"><span>Stock Out</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-chart-line"></i>
-            <span>Sales Report</span>
+            <a href="reports.html"><span>Sales Report</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-users"></i>
-            <span>Suppliers</span>
+            <a href="suppliers.html"><span>Suppliers</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-cog"></i>
-            <span>Settings</span>
+            <a href="settings.html"><span>Settings</span></a>
           </li>
         </ul>
       </div>
@@ -149,7 +150,7 @@
               <h3 class="product-name">Wireless Headphones</h3>
               <p class="product-category">Electronics</p>
               <div class="product-details">
-                <span class="product-price">$89.99</span>
+                <span class="product-price">K89.99</span>
                 <span class="product-stock">45 in stock</span>
               </div>
               <div class="product-actions">
@@ -179,7 +180,7 @@
               <h3 class="product-name">Smart Watch</h3>
               <p class="product-category">Electronics</p>
               <div class="product-details">
-                <span class="product-price">$199.99</span>
+                <span class="product-price">K199.99</span>
                 <span class="product-stock">12 in stock</span>
               </div>
               <div class="product-actions">
@@ -211,7 +212,7 @@
               <h3 class="product-name">Running Shoes</h3>
               <p class="product-category">Sports</p>
               <div class="product-details">
-                <span class="product-price">$79.99</span>
+                <span class="product-price">K79.99</span>
                 <span class="product-stock">0 in stock</span>
               </div>
               <div class="product-actions">
@@ -241,7 +242,7 @@
               <h3 class="product-name">Coffee Maker</h3>
               <p class="product-category">Home Appliances</p>
               <div class="product-details">
-                <span class="product-price">$49.99</span>
+                <span class="product-price">K49.99</span>
                 <span class="product-stock">28 in stock</span>
               </div>
               <div class="product-actions">
@@ -271,7 +272,7 @@
               <h3 class="product-name">Desk Lamp</h3>
               <p class="product-category">Home Decor</p>
               <div class="product-details">
-                <span class="product-price">$29.99</span>
+                <span class="product-price">K29.99</span>
                 <span class="product-stock">7 in stock</span>
               </div>
               <div class="product-actions">
@@ -301,7 +302,7 @@
               <h3 class="product-name">Cotton T-Shirt</h3>
               <p class="product-category">Fashion</p>
               <div class="product-details">
-                <span class="product-price">$19.99</span>
+                <span class="product-price">K19.99</span>
                 <span class="product-stock">82 in stock</span>
               </div>
               <div class="product-actions">
@@ -356,7 +357,7 @@
                   </div>
                 </td>
                 <td>Electronics</td>
-                <td>$89.99</td>
+                <td>K89.99</td>
                 <td>45</td>
                 <td>
                   <span
@@ -400,7 +401,7 @@
                   </div>
                 </td>
                 <td>Electronics</td>
-                <td>$199.99</td>
+                <td>K199.99</td>
                 <td>12</td>
                 <td>
                   <span
@@ -444,7 +445,7 @@
                   </div>
                 </td>
                 <td>Sports</td>
-                <td>$79.99</td>
+                <td>K79.99</td>
                 <td>0</td>
                 <td>
                   <span
@@ -484,35 +485,6 @@
       </div>
     </div>
 
-    <script>
-      // Toggle between grid and table view
-      const gridViewBtn = document.getElementById("gridViewBtn");
-      const tableViewBtn = document.getElementById("tableViewBtn");
-      const productsGrid = document.getElementById("productsGrid");
-      const productsTable = document.getElementById("productsTable");
-
-      gridViewBtn.addEventListener("click", () => {
-        productsGrid.style.display = "grid";
-        productsTable.style.display = "none";
-        gridViewBtn.classList.add("active");
-        tableViewBtn.classList.remove("active");
-      });
-
-      tableViewBtn.addEventListener("click", () => {
-        productsGrid.style.display = "none";
-        productsTable.style.display = "block";
-        tableViewBtn.classList.add("active");
-        gridViewBtn.classList.remove("active");
-      });
-
-      // Menu item activation
-      const menuItems = document.querySelectorAll(".menu-item");
-      menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          menuItems.forEach((i) => i.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-    </script>
+   <script src="./assets/script.js"></script>
   </body>
 </html>

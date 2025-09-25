@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
     <div class="container">
@@ -19,37 +19,36 @@
           <span>Inventory Pro</span>
         </div>
         <ul class="menu">
-          <li class="menu-item">
+          <li class="menu-item active">
             <i class="fas fa-home"></i>
-            <span>Dashboard</span>
+            <a href="index.html"><span>Dashboard</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-box"></i>
-            <span>Products</span>
+            <a href="products.html"><span>Products</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-down"></i>
-            <span>Stock In</span>
+            <a href="stockin.html"><span>Stock In</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-arrow-up"></i>
-            <span>Stock Out</span>
+            <a href="stockout.html"><span>Stock Out</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-chart-line"></i>
-            <span>Sales Report</span>
+            <a href="reports.html"><span>Sales Report</span></a>
           </li>
           <li class="menu-item">
             <i class="fas fa-users"></i>
-            <span>Suppliers</span>
+            <a href="suppliers.html"><span>Suppliers</span></a>
           </li>
-          <li class="menu-item active">
+          <li class="menu-item">
             <i class="fas fa-cog"></i>
-            <span>Settings</span>
+            <a href="settings.html"><span>Settings</span></a>
           </li>
         </ul>
       </div>
-
       <!-- Main Content -->
       <div class="main-content">
         <div class="header">
@@ -100,10 +99,7 @@
             <div class="form-group">
               <label for="currency">Currency</label>
               <select id="currency" class="form-control">
-                <option value="usd" selected>US Dollar ($)</option>
-                <option value="eur">Euro (€)</option>
-                <option value="gbp">British Pound (£)</option>
-                <option value="jpy">Japanese Yen (¥)</option>
+                <option value="usd" selected>MWK (K)</option>
               </select>
             </div>
           </div>
@@ -424,38 +420,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      // Tab functionality
-      const settingsTabs = document.querySelectorAll(".settings-tab");
-      const settingsContents = document.querySelectorAll(".settings-content");
-
-      settingsTabs.forEach((tab) => {
-        tab.addEventListener("click", function () {
-          const tabId = this.getAttribute("data-tab");
-
-          // Update active tab
-          settingsTabs.forEach((t) => t.classList.remove("active"));
-          this.classList.add("active");
-
-          // Show corresponding content
-          settingsContents.forEach((content) => {
-            content.classList.remove("active");
-            if (content.id === `${tabId}-settings`) {
-              content.classList.add("active");
-            }
-          });
-        });
-      });
-
-      // Menu item activation
-      const menuItems = document.querySelectorAll(".menu-item");
-      menuItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          menuItems.forEach((i) => i.classList.remove("active"));
-          this.classList.add("active");
-        });
-      });
-    </script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

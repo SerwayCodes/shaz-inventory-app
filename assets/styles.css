@@ -815,7 +815,6 @@ tr:hover {
   color: white;
 }
 
-
 /* Tabs */
 .tabs {
   display: flex;
@@ -1114,7 +1113,6 @@ tr:hover {
   background: var(--success);
   color: white;
 }
-
 
 /* Suppliers Table */
 .table-container {
@@ -1419,13 +1417,13 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   gap: 5px;
+  max-width: 300px;
 }
 
 .btn-edit {
   background: var(--success);
   color: white;
 }
-
 
 /* Backup Cards */
 .backup-cards {
@@ -1500,4 +1498,56 @@ input:checked + .slider:before {
   .backup-cards {
     grid-template-columns: 1fr;
   }
+}
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background: var(--primary);
+  color: white;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu-item {
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: var(--secondary);
+}
+
+.menu-item i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-item.active a span {
+  text-decoration: underline;
+  color: #ffcc00; /* Highlight color for active item */
 }
